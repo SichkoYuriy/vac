@@ -86,6 +86,7 @@ export default {
                     a {
 
                         li {
+                            cursor: default;
                             margin-bottom: 20px;
                             color: #41456B;
                         }

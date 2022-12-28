@@ -18,7 +18,6 @@
             <div class="burger__menu" @click="showDialog">
                 <i class="fa-solid fa-bars"></i>
             </div>
-
             <dialog-block v-model:show="dialogVisible">
                 <div class="menu__container">
                     <div class="close-button">
@@ -191,21 +190,27 @@ export default {
         },
         toCalculator() {
             this.$router.push("/calculator-page");
+            closeDialog();
         },
         toBlog() {
             this.$router.push("/blog-page");
+            closeDialog();
         },
         toVehicle() {
             this.$router.push("/vehicle-videos");
+            closeDialog();
         },
         toLoan() {
             this.$router.push("/loan-rates");
+            closeDialog();
         },
         toAbout() {
             this.$router.push("/about-page");
+            closeDialog();
         },
         toCatalog() {
             this.$router.push("/catalog-page");
+            closeDialog();
         },
         showDialog() {
             this.dialogVisible = true;
