@@ -31,8 +31,8 @@
                             <a href="#/" @click="showForm">
                                 <li>Contact us</li>
                             </a>
-                            <a href="/about-page">
-                                <li>About VAC</li>
+                            <a @click="toAbout"></a>
+                            <li>About VAC</li>
                             </a>
                             <a href="/loan-rates">
                                 <li>Loan Rates</li>
@@ -186,6 +186,9 @@ export default {
         DialogBlock, BaseButton
     },
     methods: {
+        toAbout() {
+            this.$router.push("/about-page");
+        },
         toCatalog() {
             this.$router.push("/catalog-page");
         },
