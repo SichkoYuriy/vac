@@ -31,8 +31,8 @@
                             <a href="#/" @click="showForm">
                                 <li>Contact us</li>
                             </a>
-                            <a @click="toAbout"></a>
-                            <li>About VAC</li>
+                            <a @click="toAbout">
+                                <li>About VAC</li>
                             </a>
                             <a href="/loan-rates">
                                 <li>Loan Rates</li>
