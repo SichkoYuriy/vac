@@ -283,6 +283,7 @@ export default {
             a {
                 display: flex;
                 align-items: center;
+                cursor: default;
 
                 img {
                     width: 50px;
