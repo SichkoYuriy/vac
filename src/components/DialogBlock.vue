@@ -27,6 +27,8 @@ export default {
             if (!this.scroll) {
                 const body = document.querySelector('body');
                 body.classList.remove('lock');
+                // const app = document.querySelector('#app');
+                // app.style.paddingRight = '0px';
             }
         }
     },

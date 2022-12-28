@@ -190,46 +190,50 @@ export default {
         },
         toCalculator() {
             this.$router.push("/calculator-page");
-            closeDialog();
+            // this.closeDialog();
         },
         toBlog() {
             this.$router.push("/blog-page");
-            closeDialog();
+            // this.closeDialog();
         },
         toVehicle() {
             this.$router.push("/vehicle-videos");
-            closeDialog();
+            // this.closeDialog();
         },
         toLoan() {
             this.$router.push("/loan-rates");
-            closeDialog();
+            // this.closeDialog();
         },
         toAbout() {
             this.$router.push("/about-page");
-            closeDialog();
+            // this.closeDialog();
         },
         toCatalog() {
             this.$router.push("/catalog-page");
-            closeDialog();
+            // this.closeDialog();
         },
         showDialog() {
             this.dialogVisible = true;
             this.scrolls = true;
             this.lockScroll(this.dialogVisible);
+            // const body = document.querySelector('#app');
+            // body.style.paddingRight = '25px';
         },
         closeDialog() {
             this.dialogVisible = false;
             this.unlockScroll(this.dialogVisible);
+            // const body = document.querySelector('#app');
+            // body.style.paddingRight = '0px';
         },
         lockScroll(lock) {
             if (lock) {
-                const body = document.querySelector('body');
+                const body = document.querySelector('#app');
                 body.classList.add('lock');
             }
         },
         unlockScroll(unlock) {
             if (!unlock) {
-                const body = document.querySelector('body');
+                const body = document.querySelector('#app');
                 body.classList.remove('lock');
             }
         },
@@ -243,6 +247,8 @@ export default {
             this.form.name = '';
             this.form.phone = '';
             this.form.email = '';
+            // const body = document.querySelector('body');
+            // body.style.paddingRight = '0px';
         },
         showSuccess() {
             this.successVisible = true;
