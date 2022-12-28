@@ -2,7 +2,7 @@
     <div class="header">
         <div class="header__container _container">
             <div class="header__logo">
-                <a href="/">
+                <a @click="toHome">
                     <img src="@/assets/VAC_logo.png" alt="logo icon">
                     <p>VAC</p>
                 </a>
@@ -34,16 +34,16 @@
                             <a @click="toAbout">
                                 <li>About VAC</li>
                             </a>
-                            <a href="/loan-rates">
+                            <a @click="toLoan">
                                 <li>Loan Rates</li>
                             </a>
-                            <a href="/vehicle-videos">
+                            <a @click="toVehicle">
                                 <li>Video</li>
                             </a>
-                            <a href="/blog-page">
+                            <a @click="toBlog">
                                 <li>Blog</li>
                             </a>
-                            <a href="/calculator-page">
+                            <a @click="toCalculator">
                                 <li>Calculate</li>
                             </a>
                         </ul>
@@ -186,6 +186,21 @@ export default {
         DialogBlock, BaseButton
     },
     methods: {
+        toHome() {
+            this.$router.push("/");
+        },
+        toCalculator() {
+            this.$router.push("/calculator-page");
+        },
+        toBlog() {
+            this.$router.push("/blog-page");
+        },
+        toVehicle() {
+            this.$router.push("/vehicle-videos");
+        },
+        toLoan() {
+            this.$router.push("/loan-rates");
+        },
         toAbout() {
             this.$router.push("/about-page");
         },
