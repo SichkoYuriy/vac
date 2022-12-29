@@ -1,7 +1,7 @@
 <template>
     <div class="footer">
         <div class="footer__container _container">
-            <a href="/" class="footer__logo"><img src="@/assets/logo-white.svg" alt="logo icon"> VAC</a>
+            <a @click="toHome" class="footer__logo"><img src="@/assets/logo-white.svg" alt="logo icon"> VAC</a>
             <div class="footer__links">
                 <a @click="toTerms">Terms</a>
                 <a @click="toPolicy">Privacy</a>
@@ -25,6 +25,9 @@ export default {
         },
         toPolicy() {
             this.$router.push("/privacy-policy");
+        },
+        toHome() {
+            this.$router.push("/");
         },
     }
 }
