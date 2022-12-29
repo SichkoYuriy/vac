@@ -25,6 +25,10 @@ export default {
 </script>
 
 <style lang="scss">
+.lock-padding {
+    overflow-y: overlay;
+}
+
 html,
 body {
     font-family: 'Gilroy';

@@ -27,8 +27,6 @@ export default {
             if (!this.scroll) {
                 const body = document.querySelector('body');
                 body.classList.remove('lock');
-                // const app = document.querySelector('#app');
-                // app.style.paddingRight = '0px';
             }
         }
     },
@@ -43,11 +41,12 @@ export default {
     left: 0;
     right: 0;
     z-index: 5;
+    overflow-y: auto;
 
 
     .menu__body {
         width: 570px;
-        height: 100%;
+        min-height: 100%;
         background-color: #fff;
         position: absolute;
         top: 0;
@@ -64,6 +63,7 @@ export default {
                 display: flex;
                 justify-content: flex-end;
                 flex-grow: 1;
+                margin-bottom: 75px;
 
                 .button {
                     height: 50px;
@@ -86,7 +86,6 @@ export default {
                     margin: 0 0 0 60px;
 
                     a {
-
                         li {
                             cursor: default;
                             margin-bottom: 20px;
@@ -105,7 +104,6 @@ export default {
 
                 .menu__socials-container {
                     display: flex;
-                    margin-bottom: 105px;
 
                     img {
                         margin-right: 10px;
@@ -302,6 +300,8 @@ export default {
                 width: 100%;
 
                 .close-button {
+                    margin-bottom: 60px;
+
                     .button {
                         padding-right: 20px;
                         padding-top: 14px;

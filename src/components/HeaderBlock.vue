@@ -27,7 +27,7 @@
                     </div>
                     <div class="menu__items">
                         <ul>
-                            <a href="#/" @click="showForm">
+                            <a @click="showForm">
                                 <li>Contact us</li>
                             </a>
                             <a @click="toAbout">
@@ -118,9 +118,9 @@
                     <div class="close-button">
                         <i class="fa-solid fa-xmark" @click="closeSuccess"></i>
                     </div>
-                    <img src="@/assets/Success.svg" alt="">
+                    <img src="@/assets/Success.svg">
                     <p class="success__header">Application Successful!</p>
-                    <p class="success__text">Our manager will contact you in the nearest time.</p>
+                    <p>Our manager will contact you in the nearest time.</p>
                 </div>
             </dialog-block>
         </div>
@@ -139,6 +139,7 @@ export default {
     },
     data() {
         return {
+            lockPaddingValue: '',
             dialogVisible: false,
             formVisible: false,
             successVisible: false,
@@ -190,50 +191,46 @@ export default {
         },
         toCalculator() {
             this.$router.push("/calculator-page");
-            // this.closeDialog();
+            this.closeDialog();
         },
         toBlog() {
             this.$router.push("/blog-page");
-            // this.closeDialog();
+            this.closeDialog();
         },
         toVehicle() {
             this.$router.push("/vehicle-videos");
-            // this.closeDialog();
+            this.closeDialog();
         },
         toLoan() {
             this.$router.push("/loan-rates");
-            // this.closeDialog();
+            this.closeDialog();
         },
         toAbout() {
             this.$router.push("/about-page");
-            // this.closeDialog();
+            this.closeDialog();
         },
         toCatalog() {
             this.$router.push("/catalog-page");
-            // this.closeDialog();
+            this.closeDialog();
         },
         showDialog() {
             this.dialogVisible = true;
             this.scrolls = true;
             this.lockScroll(this.dialogVisible);
-            // const body = document.querySelector('#app');
-            // body.style.paddingRight = '25px';
         },
         closeDialog() {
             this.dialogVisible = false;
             this.unlockScroll(this.dialogVisible);
-            // const body = document.querySelector('#app');
-            // body.style.paddingRight = '0px';
         },
         lockScroll(lock) {
             if (lock) {
-                const body = document.querySelector('#app');
+                const body = document.querySelector('body');
                 body.classList.add('lock');
             }
         },
         unlockScroll(unlock) {
             if (!unlock) {
-                const body = document.querySelector('#app');
+                const body = document.querySelector('body');
                 body.classList.remove('lock');
             }
         },
@@ -247,8 +244,6 @@ export default {
             this.form.name = '';
             this.form.phone = '';
             this.form.email = '';
-            // const body = document.querySelector('body');
-            // body.style.paddingRight = '0px';
         },
         showSuccess() {
             this.successVisible = true;
