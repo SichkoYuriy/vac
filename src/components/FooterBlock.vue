@@ -7,9 +7,9 @@
                 <a @click="toPolicy">Privacy</a>
             </div>
             <div class="footer__socials">
-                <a href="/about-page"><img src="@/assets/Instagram-white.svg" alt="instagram logo"></a>
-                <a href="/about-page"><img src="@/assets/Facebook-white.svg" alt="facebook logo"></a>
-                <a href="/about-page"><img src="@/assets/YouTube-white.svg" alt="youtube logo"></a>
+                <a @click="toAbout"><img src="@/assets/Instagram-white.svg" alt="instagram logo"></a>
+                <a @click="toAbout"><img src="@/assets/Facebook-white.svg" alt="facebook logo"></a>
+                <a @click="toAbout"><img src="@/assets/YouTube-white.svg" alt="youtube logo"></a>
             </div>
             <p class="footer__text">Created by <img src="@/assets/created-by.svg" alt="icon"></p>
             <p>©Copyright, 2020. Vehicle Approval</p>
@@ -28,6 +28,9 @@ export default {
         },
         toHome() {
             this.$router.push("/");
+        },
+        toAbout() {
+            this.$router.push("/about-page");
         },
     }
 }
