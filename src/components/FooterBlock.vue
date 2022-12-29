@@ -3,8 +3,8 @@
         <div class="footer__container _container">
             <a href="/" class="footer__logo"><img src="@/assets/logo-white.svg" alt="logo icon"> VAC</a>
             <div class="footer__links">
-                <a href="/terms-conditions">Terms</a>
-                <a href="/privacy-policy">Privacy</a>
+                <a @click="toTerms">Terms</a>
+                <a @click="toPolicy">Privacy</a>
             </div>
             <div class="footer__socials">
                 <a href="/about-page"><img src="@/assets/Instagram-white.svg" alt="instagram logo"></a>
@@ -19,7 +19,14 @@
 
 <script>
 export default {
-
+    methods: {
+        toTerms() {
+            this.$router.push("/terms-conditions");
+        },
+        toPolicy() {
+            this.$router.push("/privacy-policy");
+        },
+    }
 }
 </script>
 
