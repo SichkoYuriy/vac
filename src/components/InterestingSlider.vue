@@ -6,7 +6,7 @@
                 <base-button class="interesting-button1" :white="true" title="all articles" @click="toBlog" />
             </div>
             <div class="interesting-slider__block2" @click="toArticle">
-                <slider-component :breakpoints="swiperOptions.breakpoints">
+                <slider-component :breakpoints="swiperOptions.breakpoints" id="interesting">
                     <template v-slot:slide1>
                         <slot name="interesting-slide1"></slot>
                     </template>
@@ -19,9 +19,9 @@
                     <template v-slot:slide4>
                         <slot name="interesting-slide4"></slot>
                     </template>
+                    <div class="custom-next-interesting" @click.stop><img src="@/assets/arrow-next-blue.svg"></div>
+                    <div class="custom-prev-interesting" @click.stop><img src="@/assets/arrow-prev-blue.svg"></div>
                 </slider-component>
-                <div class="custom-next" @click.stop><img src="@/assets/arrow-next-blue.svg" alt=""></div>
-                <div class="custom-prev" @click.stop><img src="@/assets/arrow-prev-blue.svg" alt=""></div>
             </div>
             <base-button class="interesting-button2" :white="true" title="all articles" @click="toBlog" />
         </div>
@@ -42,7 +42,10 @@ export default {
         title: {
             type: String,
             default: '',
-        }
+        },
+        id: {
+            type: String,
+        },
     },
     methods: {
         toBlog() {
@@ -122,17 +125,18 @@ export default {
         }
 
         .interesting-slider__block2 {
+            width: 100%;
             box-shadow: 0px 20px 25px rgba(0, 0, 0, 0.1);
             position: relative;
 
-            .custom-next {
+            .custom-next-interesting {
                 position: absolute;
                 top: calc((100% - 53px) / 2);
                 z-index: 2;
                 right: 0;
             }
 
-            .custom-prev {
+            .custom-prev-interesting {
                 position: absolute;
                 top: calc((100% - 53px) / 2);
                 z-index: 2;
@@ -175,7 +179,7 @@ export default {
 
             .interesting-slider__block2 {
 
-                .custom-next {
+                .custom-next-interesting {
                     top: calc((100% - 35px) / 2.5);
 
                     img {
@@ -184,7 +188,7 @@ export default {
                     }
                 }
 
-                .custom-prev {
+                .custom-prev-interesting {
                     top: calc((100% - 35px) / 2.5);
 
                     img {

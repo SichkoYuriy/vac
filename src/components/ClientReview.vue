@@ -5,7 +5,7 @@
                 <p>What our client say about us!</p>
             </div>
             <div class="client-rewiew__slider">
-                <slider-component>
+                <slider-component id="clientrewiew">
                     <template v-slot:slide1>
                         <div class="slide__sec1 img1">
                         </div>
@@ -52,19 +52,17 @@
                                 proident.</p>
                         </div>
                     </template>
+                    <div class="custom-next-clientrewiew"><img src="@/assets/arrow-next-blue.svg"></div>
+                    <div class="custom-prev-clientrewiew"><img src="@/assets/arrow-prev-blue.svg"></div>
                 </slider-component>
-                <div class="custom-next"><img src="@/assets/arrow-next-blue.svg" alt=""></div>
-                <div class="custom-prev"><img src="@/assets/arrow-prev-blue.svg" alt=""></div>
             </div>
         </div>
     </div>
-
 </template>
 
 <script>
 import SliderComponent from './SliderComponent.vue';
 export default {
-
     components: {
         SliderComponent
     }
@@ -154,14 +152,14 @@ export default {
                 }
             }
 
-            .custom-next {
+            .custom-next-clientrewiew {
                 position: absolute;
                 top: calc((100% - 53px) / 2);
                 right: 0;
                 z-index: 2;
             }
 
-            .custom-prev {
+            .custom-prev-clientrewiew {
                 position: absolute;
                 top: calc((100% - 53px) / 2);
                 left: 0;
@@ -219,7 +217,7 @@ export default {
                     }
                 }
 
-                .custom-next {
+                .custom-next-clientrewiew {
                     top: 90px;
 
                     img {
@@ -228,7 +226,7 @@ export default {
                     }
                 }
 
-                .custom-prev {
+                .custom-prev-clientrewiew {
                     top: 90px;
 
                     img {

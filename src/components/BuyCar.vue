@@ -6,14 +6,15 @@
                 <base-button title='Request a suv' class="buy-car__button1" :white="true" @click="toQuiz" />
             </div>
             <div class="by-car__slider-container">
-                <slider-component>
-                    <template v-slot:slide1><img src="@/assets/Nissan.png" alt=""></template>
-                    <template v-slot:slide2><img src="@/assets/Ford.png" alt=""></template>
-                    <template v-slot:slide3><img src="@/assets/Ram.png" alt=""></template>
-                    <template v-slot:slide4><img src="@/assets/Dodge.png" alt=""></template>
+                <slider-component id="buycar">
+                    <template v-slot:slide1><img src="@/assets/Nissan.png"></template>
+                    <template v-slot:slide2><img src="@/assets/Ford.png"></template>
+                    <template v-slot:slide3><img src="@/assets/Ram.png"></template>
+                    <template v-slot:slide4><img src="@/assets/Dodge.png"></template>
+                    <div class="custom-next-buycar"><img src="@/assets/arrow-next.svg"></div>
+                    <div class="custom-prev-buycar"><img src="@/assets/arrow-prev.svg"></div>
                 </slider-component>
-                <div class="custom-next"><img src="@/assets/arrow-next.svg"></div>
-                <div class="custom-prev"><img src="@/assets/arrow-prev.svg"></div>
+
             </div>
             <base-button title='Request a suv' class="buy-car__button2" :white="true" @click="toQuiz" />
         </div>
@@ -28,7 +29,7 @@ import SliderComponent from '@/components/SliderComponent.vue';
 export default {
     name: 'BuyCar',
     components: {
-        SliderComponent, BaseButton
+        SliderComponent, BaseButton,
     },
     methods: {
         toQuiz() {
@@ -78,7 +79,7 @@ export default {
             width: 599px;
             margin: 0 auto;
 
-            .custom-prev {
+            .custom-prev-buycar {
                 position: absolute;
                 top: calc(75% - 53px);
                 left: 0;
@@ -90,7 +91,7 @@ export default {
                 }
             }
 
-            .custom-next {
+            .custom-next-buycar {
                 position: absolute;
                 top: calc(75% - 53px);
                 right: 0;
@@ -102,15 +103,20 @@ export default {
                 }
             }
 
-            .slider-component {
+            .slider {
+                margin: 0 auto;
                 width: 490px;
                 margin-top: 177px;
 
-                .slider-component__slide {
+                .slider-component {
                     width: 100%;
 
-                    img {
+                    .slider-component__slide {
                         width: 100%;
+
+                        img {
+                            width: 100%;
+                        }
                     }
                 }
             }
@@ -141,15 +147,15 @@ export default {
             }
 
             .by-car__slider-container {
-                .custom-prev {
+                .custom-prev-buycar {
                     top: calc(55% - 53px);
                 }
 
-                .custom-next {
+                .custom-next-buycar {
                     top: calc(55% - 53px);
                 }
 
-                .slider-component {
+                .slider {
                     margin-top: 60px;
                     margin-bottom: 60px;
                 }
@@ -180,15 +186,15 @@ export default {
             .by-car__slider-container {
                 width: 100%;
 
-                .custom-next,
-                .custom-prev {
+                .custom-next-buycar,
+                .custom-prev-buycar {
                     img {
                         width: 35px;
                         height: 35px;
                     }
                 }
 
-                .slider-component {
+                .slider {
                     margin-top: 40px;
                     margin-bottom: 40px;
                     width: 90%;

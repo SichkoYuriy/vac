@@ -50,10 +50,6 @@ export default {
     components: {
         BuyCar, HowWork, PerfectCar, AdvantagesBlock, DreamVehicle, HappyCustomers, ClientReview, CalculatorComponent, SliderCard, InterestingSlider, SliderComponent,
     },
-    provide() {
-        return {
-        }
-    }
 } 
 </script>
 

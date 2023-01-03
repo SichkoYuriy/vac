@@ -1,27 +1,29 @@
 <template>
-    <swiper :modules="modules" class="slider-component"
-        :navigation="{ nextEl: '.custom-next', prevEl: '.custom-prev' }">
-        <swiper-slide class="slider-component__slide">
-            <slot name="slide1"></slot>
-        </swiper-slide>
-        <swiper-slide class="slider-component__slide">
-            <slot name="slide2"></slot>
-        </swiper-slide>
-        <swiper-slide class="slider-component__slide">
-            <slot name="slide3"></slot>
-        </swiper-slide>
-        <swiper-slide class="slider-component__slide">
-            <slot name="slide4"></slot>
-        </swiper-slide>
-        ...
-    </swiper>
+    <div class="slider">
+        <swiper :modules="modules" class="slider-component"
+            :navigation="{ nextEl: `.custom-next-${id}`, prevEl: `.custom-prev-${id}` }" :breakpoints=breakpoints>
+            <swiper-slide class="slider-component__slide">
+                <slot name="slide1"></slot>
+            </swiper-slide>
+            <swiper-slide class="slider-component__slide">
+                <slot name="slide2"></slot>
+            </swiper-slide>
+            <swiper-slide class="slider-component__slide">
+                <slot name="slide3"></slot>
+            </swiper-slide>
+            <swiper-slide class="slider-component__slide">
+                <slot name="slide4"></slot>
+            </swiper-slide>
+        </swiper>
+        <slot></slot>
+    </div>
 </template>
 
 <script>
 import { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/vue';
-import 'swiper/scss';
-import 'swiper/scss/navigation';
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 
 export default {
@@ -31,8 +33,16 @@ export default {
     },
     setup() {
         return {
-            modules: [Navigation]
+            modules: [Navigation],
         }
+    },
+    props: {
+        breakpoints: {
+            type: String
+        },
+        id: {
+            type: String
+        },
     }
 }
 </script>

@@ -68,6 +68,7 @@ export default {
             line-height: 108.5%;
             letter-spacing: 0.02em;
             color: #FFFFFF;
+            cursor: pointer;
 
             img {
                 margin-right: 5px;
@@ -81,6 +82,7 @@ export default {
             gap: 20px;
 
             a {
+                cursor: pointer;
                 font-weight: 600;
                 font-size: 16px;
                 line-height: 14px;
@@ -95,6 +97,7 @@ export default {
         .footer__socials {
             display: flex;
             gap: 10px;
+            cursor: pointer;
         }
 
         .footer__text {
