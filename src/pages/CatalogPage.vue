@@ -227,8 +227,8 @@
                             </template>
                         </catalog-acordeon>
 
-                        <div class="catalog__filters-apply" v-if="clear()">
-                            <base-button blue title="apply" @click="this.apply = true" />
+                        <div class="catalog__filters-apply">
+                            <base-button blue title="apply" @click="applyButtonClick" />
                         </div>
                     </div>
                 </div>
@@ -294,6 +294,8 @@ export default {
     },
     data() {
         return {
+            sorted: Array,
+            filtered: Array,
             apply: true,
             noMatches: false,
             arrFilter: Number,
@@ -506,6 +508,9 @@ export default {
         this.filtration = this.sort[0];
     },
     methods: {
+        applyButtonClick() {
+            this.apply = true;
+        },
         onClickHandler() {
             window.scroll({
                 top: 0,
@@ -518,7 +523,6 @@ export default {
             block.classList.remove('active');
             const body = document.querySelector('body');
             body.classList.remove('lock');
-            this.apply = true;
         },
         openFilters() {
             const block = document.querySelector(".catalog__filters");
@@ -570,7 +574,6 @@ export default {
             this.value = [5000, 350000];
             this.yearValue = [1990, 2022];
             this.resetKilometres();
-            this.apply = true;
         },
         clear() {
             if (this.bodyType.length != 0 || this.transmission.length != 0 || this.kilometres != 200000 ||
@@ -631,74 +634,48 @@ export default {
         displayed() {
             const startIndex = this.perPage * (this.currentPage - 1);
             const endIndex = startIndex + this.perPage;
-            let filtered = this.cars
-                .filter(product => {
-                    if (this.apply) {
+            if (this.apply) {
+                this.filtered = this.cars
+                    .filter(product => {
                         return this.carMarke == '' || product.marke.toLowerCase() == this.carMarke.toString().toLowerCase();
-                    } else {
-                        return sorted
-                    }
-                })
-                .filter(product => {
-                    if (this.apply) {
+                    })
+                    .filter(product => {
                         return this.carModel == '' || product.model.toLowerCase() == this.carModel.toString().toLowerCase();
-                    } else {
-                        return sorted
-                    }
-                })
-                .filter(product => {
-                    if (this.apply) {
+                    })
+                    .filter(product => {
                         return this.transmission == 0 || this.transmission.indexOf(product.transmission.toString()) != -1;
-                    } else {
-                        return sorted
-                    }
-                })
-                .filter(product => {
-                    if (this.apply) {
+                    })
+                    .filter(product => {
                         return this.bodyType == 0 || this.bodyType.indexOf(product.bodyType.toString()) != -1;
-                    } else {
-                        return sorted
-                    }
-                })
-                .filter(product => {
-                    if (this.apply) {
+                    })
+                    .filter(product => {
                         return Number(product.price) >= this.value[0] && Number(product.price) <= this.value[1];
-                    } else {
-                        return sorted
-                    }
-                })
-                .filter(product => {
-                    if (this.apply) {
+                    })
+                    .filter(product => {
                         return Number(product.year) >= this.yearValue[0] && Number(product.year) <= this.yearValue[1];
-                    } else {
-                        return sorted
-                    }
-                })
-                .filter(product => {
-                    if (this.apply) {
+                    })
+                    .filter(product => {
                         return Number(product.kilometres) <= this.kilometres;
-                    } else {
-                        return sorted
-                    }
+                    });
+                this.sorted = _.sortBy(this.filtered, product => {
+                    return Number(product[this.filtration.key]);
                 });
-            let sorted = _.sortBy(filtered, product => {
-                return Number(product[this.filtration.key]);
-            });
-            if (this.filtration.dir === 'desc') {
-                sorted = sorted.reverse();
             }
-            if (filtered.length <= 0) {
+            if (this.filtration.dir === 'desc') {
+                this.sorted = this.sorted.reverse();
+            }
+            if (this.filtered.length <= 0) {
                 this.noMatches = true;
                 this.apply = true
             } else {
                 this.noMatches = false;
             }
-            this.arrFilter = filtered;
+            this.arrFilter = this.filtered;
             if (this.arrFilter.length >= 6) {
-                return sorted.slice(startIndex, endIndex);
+                return this.sorted.slice(startIndex, endIndex);
             } else {
                 this.currentPage = 1;
-                return sorted
+                return this.sorted
             }
         },
     },

@@ -1,7 +1,7 @@
 <template>
     <div class="article-template">
         <div class="article-template__button-back">
-            <p @click="toBlog"><img src="@/assets/arrow-back.svg" alt=""><span>back</span></p>
+            <p @click="back"><img src="@/assets/arrow-back.svg" alt=""><span>back</span></p>
         </div>
         <div class="article-template__cover">
             <img class="article-template__img1" src="@/assets/article-cover.jpg" alt="">
@@ -21,8 +21,8 @@
 <script>
 export default {
     methods: {
-        toBlog() {
-            this.$router.push("/blog-page");
+        back() {
+            this.$router.go(-1)
         }
     }
 }

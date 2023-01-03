@@ -2,7 +2,8 @@
     <div class="blog-main">
         <div class="blog-main__container _container">
             <div class="blog-main__block1">
-                <div class="blog-main__card" v-for="blog in displayedRecords" :key="blog" @click="toArticle">
+                <div class="blog-main__card" v-for="blog in displayedRecords" :key="blog"
+                    @click="toArticle(blog.article)">
                     <div class="blog-main__card-sec1">
                         <img :src="blog.img">
                     </div>
@@ -27,41 +28,41 @@ export default {
             perPage: 9,
             currentPage: 1,
             blogs: [
-                { img: require('@/assets/interesting-slider1.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us' },
-                { img: require('@/assets/interesting-slider2.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us' },
-                { img: require('@/assets/interesting-slider3.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us' },
+                { img: require('@/assets/interesting-slider1.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us', article: '/article-one' },
+                { img: require('@/assets/interesting-slider2.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us', article: '/article-two' },
+                { img: require('@/assets/interesting-slider3.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us', article: '/article-two' },
 
-                { img: require('@/assets/interesting-slider4.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us' },
-                { img: require('@/assets/interesting-slider5.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us' },
-                { img: require('@/assets/interesting-slider6.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us' },
+                { img: require('@/assets/interesting-slider4.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us', article: '/article-one' },
+                { img: require('@/assets/interesting-slider5.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us', article: '/article-two' },
+                { img: require('@/assets/interesting-slider6.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us', article: '/article-one' },
 
-                { img: require('@/assets/interesting-slider7.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us' },
-                { img: require('@/assets/interesting-slider8.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us' },
-                { img: require('@/assets/interesting-slider9.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us' },
+                { img: require('@/assets/interesting-slider7.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us', article: '/article-two' },
+                { img: require('@/assets/interesting-slider8.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us', article: '/article-one' },
+                { img: require('@/assets/interesting-slider9.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us', article: '/article-one' },
 
-                { img: require('@/assets/interesting-slider7.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us' },
-                { img: require('@/assets/interesting-slider8.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us' },
-                { img: require('@/assets/interesting-slider9.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us' },
+                { img: require('@/assets/interesting-slider7.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us', article: '/article-one' },
+                { img: require('@/assets/interesting-slider8.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us', article: '/article-one' },
+                { img: require('@/assets/interesting-slider9.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us', article: '/article-two' },
 
-                { img: require('@/assets/interesting-slider1.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us' },
-                { img: require('@/assets/interesting-slider2.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us' },
-                { img: require('@/assets/interesting-slider3.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us' },
+                { img: require('@/assets/interesting-slider1.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us', article: '/article-one' },
+                { img: require('@/assets/interesting-slider2.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us', article: '/article-two' },
+                { img: require('@/assets/interesting-slider3.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us', article: '/article-one' },
 
-                { img: require('@/assets/interesting-slider4.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us' },
-                { img: require('@/assets/interesting-slider5.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us' },
-                { img: require('@/assets/interesting-slider6.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us' },
+                { img: require('@/assets/interesting-slider4.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us', article: '/article-two' },
+                { img: require('@/assets/interesting-slider5.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us', article: '/article-two' },
+                { img: require('@/assets/interesting-slider6.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us', article: '/article-one' },
 
-                { img: require('@/assets/interesting-slider1.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us' },
-                { img: require('@/assets/interesting-slider2.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us' },
-                { img: require('@/assets/interesting-slider3.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us' },
+                { img: require('@/assets/interesting-slider1.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us', article: '/article-one' },
+                { img: require('@/assets/interesting-slider2.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us', article: '/article-one' },
+                { img: require('@/assets/interesting-slider3.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us', article: '/article-two' },
 
-                { img: require('@/assets/interesting-slider4.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us' },
-                { img: require('@/assets/interesting-slider5.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us' },
-                { img: require('@/assets/interesting-slider6.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us' },
+                { img: require('@/assets/interesting-slider4.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us', article: '/article-one' },
+                { img: require('@/assets/interesting-slider5.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us', article: '/article-two' },
+                { img: require('@/assets/interesting-slider6.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us', article: '/article-one' },
 
-                { img: require('@/assets/interesting-slider7.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us' },
-                { img: require('@/assets/interesting-slider8.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us' },
-                { img: require('@/assets/interesting-slider9.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us' },
+                { img: require('@/assets/interesting-slider7.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us', article: '/article-one' },
+                { img: require('@/assets/interesting-slider8.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us', article: '/article-two' },
+                { img: require('@/assets/interesting-slider9.jpg'), date: '10 May, 2020', title: 'How to save on buying a car? Why is it better to buy from us', article: '/article-one' },
 
             ],
         }
@@ -85,8 +86,8 @@ export default {
                 this.perPage = 6;
             }
         },
-        toArticle() {
-            this.$router.push("/article-one");
+        toArticle(article) {
+            this.$router.push(article);
         }
     },
     computed: {
