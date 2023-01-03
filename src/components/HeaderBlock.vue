@@ -289,7 +289,7 @@ export default {
             a {
                 display: flex;
                 align-items: center;
-                cursor: default;
+                cursor: pointer;
 
                 img {
                     width: 50px;
@@ -325,6 +325,8 @@ export default {
         }
 
         .burger__menu {
+            cursor: pointer;
+
             .fa-bars {
                 font-size: 37px;
             }

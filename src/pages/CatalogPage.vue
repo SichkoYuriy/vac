@@ -156,7 +156,7 @@
                                         <p><span>$</span>{{ formattedPriceMax }}</p>
                                     </div>
                                     <vue-slider v-model="value" :min="5000" :max="350000" :interval="5000"
-                                        :tooltip="'none'" :enable-cross="false">
+                                        :tooltip="'none'" :enable-cross="false" class="vue-slider">
                                     </vue-slider>
                                 </div>
                             </template>
@@ -186,7 +186,7 @@
                                         <p>{{ yearValue[1] }}</p>
                                     </div>
                                     <vue-slider v-model="yearValue" :min="1990" :max="2022" :interval="1"
-                                        :tooltip="'none'" :enable-cross="false">
+                                        :tooltip="'none'" :enable-cross="false" class="vue-slider">
                                     </vue-slider>
                                 </div>
                             </template>
@@ -877,6 +877,10 @@ p {
                         gap: 15px;
                         margin-bottom: 10px;
 
+                        label {
+                            cursor: pointer;
+                        }
+
                         .filter-two__label,
                         .filter-three__label {
                             position: relative;
@@ -886,7 +890,6 @@ p {
                                 position: absolute;
                                 height: 0;
                                 width: 0;
-                                cursor: pointer;
                             }
 
                             input:checked~.check {
@@ -934,6 +937,10 @@ p {
                     .filter-six {
                         margin-bottom: 10px;
 
+                        input {
+                            cursor: pointer;
+                        }
+
                         p {
                             font-weight: 600;
                             font-size: 20px;
@@ -957,6 +964,10 @@ p {
                         font-size: 20px;
                         line-height: 25px;
                         color: #41456B;
+
+                        .vue-slider {
+                            cursor: pointer;
+                        }
 
                         .filter-four__values,
                         .filter-five__values {

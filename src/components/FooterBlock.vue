@@ -20,17 +20,28 @@
 <script>
 export default {
     methods: {
+        toTop() {
+            window.scroll({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+            })
+        },
         toTerms() {
             this.$router.push("/terms-conditions");
+            this.toTop();
         },
         toPolicy() {
             this.$router.push("/privacy-policy");
+            this.toTop();
         },
         toHome() {
             this.$router.push("/");
+            this.toTop();
         },
         toAbout() {
             this.$router.push("/about-page");
+            this.toTop();
         },
     }
 }

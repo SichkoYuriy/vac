@@ -88,6 +88,11 @@ export default {
         },
         toArticle(article) {
             this.$router.push(article);
+            window.scroll({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+            })
         }
     },
     computed: {

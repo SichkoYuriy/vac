@@ -1,9 +1,9 @@
 <template>
     <div class="catalog-acordeon">
         <div class="catalog-acordeon__container">
-            <div class="catalog-acordeon__title" :class="{ active: open }">
+            <div class="catalog-acordeon__title" :class="{ active: open }" @click="open = !open">
                 <slot name="title"></slot>
-                <img src="@/assets/arrow-down.svg" @click="open = !open">
+                <img src="@/assets/arrow-down.svg">
             </div>
             <transition name="fade">
                 <div class="catalog-acordeon__filter" v-show="open">
@@ -52,6 +52,7 @@ export default {
     .catalog-acordeon__container {
 
         .catalog-acordeon__title {
+            cursor: pointer;
             display: flex;
             justify-content: space-between;
             font-weight: 500;

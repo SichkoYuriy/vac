@@ -246,6 +246,7 @@ export default {
                     margin-bottom: 55px;
 
                     button {
+                        cursor: pointer;
                         height: 50px;
                         padding: 18px;
                         background-color: #fff;
@@ -289,6 +290,7 @@ export default {
                 }
 
                 input[type=range] {
+                    cursor: pointer;
                     width: 100%;
                     -webkit-appearance: none;
                     background: #D7D7D7;

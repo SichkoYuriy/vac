@@ -6,15 +6,14 @@
                 <base-button title='Request a suv' class="buy-car__button1" :white="true" @click="toQuiz" />
             </div>
             <div class="by-car__slider-container">
-                <slider-component grabCursor>
+                <slider-component>
                     <template v-slot:slide1><img src="@/assets/Nissan.png" alt=""></template>
                     <template v-slot:slide2><img src="@/assets/Ford.png" alt=""></template>
                     <template v-slot:slide3><img src="@/assets/Ram.png" alt=""></template>
                     <template v-slot:slide4><img src="@/assets/Dodge.png" alt=""></template>
                 </slider-component>
-
-                <div class="custom-next"><img src="@/assets/arrow-next.svg" alt=""></div>
-                <div class="custom-prev"><img src="@/assets/arrow-prev.svg" alt=""></div>
+                <div class="custom-next"><img src="@/assets/arrow-next.svg"></div>
+                <div class="custom-prev"><img src="@/assets/arrow-prev.svg"></div>
             </div>
             <base-button title='Request a suv' class="buy-car__button2" :white="true" @click="toQuiz" />
         </div>
@@ -24,6 +23,7 @@
 <script>
 import BaseButton from './BaseButton.vue';
 import SliderComponent from '@/components/SliderComponent.vue';
+
 
 export default {
     name: 'BuyCar',

@@ -13,7 +13,6 @@
         <swiper-slide class="slider-component__slide">
             <slot name="slide4"></slot>
         </swiper-slide>
-
         ...
     </swiper>
 </template>
@@ -22,6 +21,8 @@
 import { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/scss';
+import 'swiper/scss/navigation';
+
 
 export default {
     name: 'SliderComponent',
@@ -36,6 +37,13 @@ export default {
 }
 </script>
 
-<style>
+<style >
+.swiper-button-disabled {
+    opacity: .5;
+}
 
+.custom-prev,
+.custom-next {
+    cursor: pointer;
+}
 </style>

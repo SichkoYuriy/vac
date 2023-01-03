@@ -1,9 +1,11 @@
 <template>
-    <div class="menu" v-if="show" @click="hideDialog">
-        <div class="menu__body" @click.stop>
-            <slot></slot>
+    <transition name="fade">
+        <div class="menu" v-if="show" @click="hideDialog">
+            <div class="menu__body" @click.stop>
+                <slot></slot>
+            </div>
         </div>
-    </div>
+    </transition>
 </template>
 
 <script>
@@ -34,6 +36,16 @@ export default {
 </script>
 
 <style lang="scss">
+.fade-enter-active,
+.fade-leave-active {
+    transition: all .5s;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+}
+
 .menu {
     position: fixed;
     top: 0;
@@ -87,7 +99,7 @@ export default {
 
                     a {
                         li {
-                            cursor: default;
+                            cursor: pointer;
                             margin-bottom: 20px;
                             color: #41456B;
                         }
