@@ -80,6 +80,7 @@ export default {
             margin: 0 auto;
 
             .custom-prev-buycar {
+                cursor: pointer;
                 position: absolute;
                 top: calc(75% - 53px);
                 left: 0;
@@ -92,6 +93,7 @@ export default {
             }
 
             .custom-next-buycar {
+                cursor: pointer;
                 position: absolute;
                 top: calc(75% - 53px);
                 right: 0;

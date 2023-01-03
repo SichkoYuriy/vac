@@ -125,11 +125,13 @@ export default {
         }
 
         .interesting-slider__block2 {
+            cursor: pointer;
             width: 100%;
             box-shadow: 0px 20px 25px rgba(0, 0, 0, 0.1);
             position: relative;
 
             .custom-next-interesting {
+                cursor: pointer;
                 position: absolute;
                 top: calc((100% - 53px) / 2);
                 z-index: 2;
@@ -137,6 +139,7 @@ export default {
             }
 
             .custom-prev-interesting {
+                cursor: pointer;
                 position: absolute;
                 top: calc((100% - 53px) / 2);
                 z-index: 2;

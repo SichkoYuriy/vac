@@ -153,6 +153,7 @@ export default {
             }
 
             .custom-next-clientrewiew {
+                cursor: pointer;
                 position: absolute;
                 top: calc((100% - 53px) / 2);
                 right: 0;
@@ -160,6 +161,7 @@ export default {
             }
 
             .custom-prev-clientrewiew {
+                cursor: pointer;
                 position: absolute;
                 top: calc((100% - 53px) / 2);
                 left: 0;
